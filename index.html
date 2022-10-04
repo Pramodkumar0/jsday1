@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>1.Difference between “ == “ and “ === “ operators.</p>
+    Ans: <ul>
+        <li>== is used for comparison between two variables irrespective of the datatype of variable.</li>
+        <li>=== is used for comparision between two variables but this will check strict type, which means it will check datatype and compare two values.</li>
+    </ul>
+    Ex:<pre>if (number == 100)  // Here Comparision between two values using ==. It will compare irrespective of datatype of variable
+        alert("Both are equal");    
+     else    
+        alert("Both are not equal"); 
+    </pre>
+
+    Ex: <pre>
+        if (number === 100)  // Here Comparision between two values using ===. It will compare strict check means it will check datatype as well.
+   alert("Both are equal");      
+else      
+   alert("Both are not equal"); 
+    </pre>
+  
+   
+    <hr>
+    <p>2.What is the spread operator?</p>
+    Ans:<p></p>
+    <ul>
+        <li>Spread syntax (...)</li> 
+        <li>Allows an iterable, such as an array or string, to be expanded in places where zero or more arguments </li>
+    </ul>
+    Example:
+    <pre>const array = [1, 2, 3];
+        const obj = { ...array }; // { 0: 1, 1: 2, 2: 3 }</pre>
+    <hr>
+    <p>3.What are the differences between var, let and const?</p>
+    Ans:
+   <p>Let</p>  <ul>
+        <li>The let keyword was introduced in ES6 (2015).</li>
+
+           <li>Variables defined with let cannot be Redeclared.</li> 
+            
+           <li>Variables defined with let must be Declared before use.</li> 
+            
+           <li>Variables defined with let have Block Scope.</li>
+    </ul>
+    <p>var</p>
+    <ul>
+            <li>Variables defined with const cannot be Redeclared.</li>
+           <li> Variables defined with const cannot be Reassigned.</li>            
+           <li>Variables defined with const have Block Scope.</li>
+    </ul>
+    <p>const</p>
+    <ul>
+        <li>Variables are containers for storing data (storing data values).
+
+            In this example, x, y, and z, are variables, declared with the var keyword:</li>
+            <li>var x = 5; <br> 
+                var y = 6; <br>
+                var z = x + y;</li>
+    </ul>
+    <hr>
+<p>4.What is execution context</p>
+<ul>
+    <li>Execution context is a concept in the language </li>
+       <li>Spec that—in layman's terms—roughly equates to the 'environment'.</li>
+       <li>A function executes in; that is, variable scope (and the scope chain, variables in closures from outer scopes),</li>  
+       <li>Function arguments, and the value of the this object.</li>
+</ul>
+<hr>
+<p>5.What is meant by first class functions?</p>
+<ul>
+    <li>A programming language is said to have First-class functions</li>
+    <li>if functions in that language are treated like other variables.</li>
+    <li>functions can be assigned to any other variable or passed as an argument or can be returned by another function</li>
+    <li>JavaScript treat function as a first-class-citizens. </li>
+    <li>This means that functions are simply a value and are just another type of object.</li>
+</ul>
+<hr>
+<p>6.What are closures? Give an example of closure</p>
+<ul>
+    <li>Basically a closure function </li>
+    <li>That can access to the variables declared in the outer context,including global variables.</li>
+    <li>A Closure is a named or anonymous function </li>
+    <li>Defined within the context of an object or any other function, which preserves and access to the context where it was declared</li>
+    <br>
+    Example:<pre>var counter = 0;
+        function increase() {
+            counter += 1;  // increment its current value.
+            console.log(counter);
+        }
+         
+        increase();
+        increase();
+        increase()</pre>
+</ul>
+<p>7.Explain call(), apply() and, bind() methods. Give an example of call(), apply(), bind()</p>
+Ans:  Call()<pre>
+    function test(a,b){
+        console.log(a,b)
+        console.log(this)
+    }
+    test.call({name: "pramod"} 10,20)
+</pre>
+apply() <pre>
+    function test(a,b){
+        console.log(a,b)
+        console.log(this)
+    }
+    test.call({name: "pramod"})
+    test.apply({name:"p"},[10,33])
+
+</pre>
+bind()<pre>
+    
+    let print = function()
+    {
+        console.log(this.firstname + this.name +this.lastname )
+    }
+
+    let givingvalues = print.bind({name: "pramod",firstname: "pusala",lastname: "kumar"})
+       
+    console.log(print)
+    givingvalues()
+</pre>
+<br>
+<pre>
+    let a = function(){
+        console.log(this)
+    }
+    let b = a.bind({name: "pp",age:44})
+    b()
+  
+</pre>
+<script>
+    
+    let print = function()
+    {console.log(this)}
+
+    let givingvalues = print.bind({name: "pramod",firstname: "pusala",lastname: "kumar"})
+    console.log(print)
+    givingvalues()
+
+    let a = function(){
+        console.log(this)
+    }
+    let b = a.bind({name: "pp",age:44})
+    b()
+
+        
+
+    
+
+
+</script>
+</body>
+</html>
